@@ -1,0 +1,2 @@
+A starchy and delicious vegetable that is easy to grow and nutritious with a long storage life. Click below for everything you need to know to grow!
+<p><a class="btn" href="potatoes.html"> Growing Potatoes &raquo;</a></p>

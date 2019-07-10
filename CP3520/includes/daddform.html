@@ -1,0 +1,28 @@
+		
+    <form name="viewP" method="post" action=""<?php $PHP_SELF?>">
+	  <h2>View patients prescriptions</h2>
+      <input type="text" placeholder="Patient Name" name="PName"><input type="submit" value="Submit" name="viewPrescriptionsButton">
+
+
+    <h2>Add new Prescriptions</h2>
+   <form name="addtitle" method="post" action=""<?php $PHP_SELF?>">
+      <input type="text" placeholder="Drug Trade Name" name="DTN">
+      <input type="text" placeholder="Patients SIN" name="PSIN">
+	  <input type="text" placeholder="Quantity" name="Quantity">
+	  <input type="text" placeholder="Prescribe Date" onfocus="(this.type='date')" onblur="(this.type='text')" name="Date">
+	  
+	  <br /><br />
+
+	<input type="submit" value="Submit" name="addPrescriptionButton">
+
+	 <h2>Add new patients</h2>
+	  <input type="text" placeholder="Patient Name" name="Name">
+      <input type="text" placeholder="Patient SIN" name="SIN">
+      <input type="text" placeholder="Patient Age" name="Age">
+	  <input type="text" placeholder="Patient Address" name="Address">
+	  <br /><br />
+    
+     <input type="submit" value="Submit" name="addPatientsButton">
+    
+      
+    </form>  

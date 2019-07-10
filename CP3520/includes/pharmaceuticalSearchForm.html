@@ -1,0 +1,17 @@
+    
+
+    <form name="search" method="post" action="<?php $PHP_SELF?>">
+ 
+		<h1>Search by individual</h1>
+		<input type="text" placeholder="Keyword" name="keyword">
+        <input type="submit" value="Search" name="searchButton"><br/><br />
+		<input type="radio" name="choice" value="ContractS" checked><label for="Contract">Contracts by Supervisor</label>
+		<input type="radio" name="choice" value="ContractP"><label for="Contract">Contracts by Pharmacy</label>
+		<input type="radio" name="choice" value="Drug"><label for="Drug">Drugs by Trade Name</label><br />
+
+		<h2>Or view all:</h2>
+		<input type="submit" value="Contracts" name="allContractsButton"> <input type="submit" value="Drug Information" name="allDrugsButton">
+
+		
+		
+  </form>

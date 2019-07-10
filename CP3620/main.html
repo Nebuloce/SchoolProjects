@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script src="getcourses.js"></script><script src="assigncourses.js"></script><script src = "totalhours.js"></script>
+</head>
+<body>
+<select id="programs">
+<option value="CP">Computing</option>
+<option value="EL">Electrical</option>
+<option value="BI">Biomedical</option>
+</select>
+<select id="semesters">
+<option value="Summer">Summer</option>
+<option value="Fall">Fall</option>
+<option value="Winter">Winter</option>
+<option value="Spring">Spring</option>
+</select>
+<div id="course">
+<button id="coursebutton" type="button"onclick="loadXMLDoc('')">
+   Get courses
+</button></div><div id="courses"></div>
+<div id="teach">
+<select id="teachers">
+<option value="Branko">Branko</option>
+<option value="Pat">Pat</option>
+<option value="Donna">Donna</option>
+<option value="Yolanda">Yolanda</option>
+</select></div>
+<div id="assign">
+<button id="assignbutton" type="button"onclick="assign('')">
+   Assign
+</button>
+</div> 
+<div id="assignments" >
+</div>
+<div>
+<button id="hoursbutton" type="button"onclick="hours('')">
+   Show hours
+</button>
+</div>
+<div id="totalhours" >
+</div>
+
+</body>
+</html>

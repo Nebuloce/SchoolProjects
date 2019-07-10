@@ -1,0 +1,78 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CP3620 Lab 4">
+
+    <title>CP3620 Lab 4</title>
+
+	<link rel="stylesheet" href="../../css/main.css">
+
+<script src="js/quiz.js"></script>
+</head>
+
+<body>
+	<div id="page">
+
+		<header>
+			<ul id="mainNav">			
+				<li><a href="../../index.html">Home</a></li>			
+			</ul>
+		</header>
+
+		<div id="content">
+		
+			<div id="logo">
+					<img src="../../images/web.png">
+			</div>
+			<h1>CP3620 Web Programming</h1>
+			<h2>Lab 4: JavaScript and AJAX</h2>
+			<br>
+			
+			<blockquote class="blockquote_white">
+	  			<h4>1. [50 marks]</h4>
+  			  			
+  				<p>Write Javascript <code>quiz.js</code>
+					which evaluates the following quiz:</p>
+
+				<p>Answer the following questions.  When you are done, click the
+					Check Answers button at the bottom of the page.
+				</p>
+
+  				<form id="myForm" method="post"
+							onsubmit="return validate()">
+				<fieldset>
+					<ul>
+						<li> Two apples plus two apples makes:
+							<select id="Q1">
+							<option value="0">One Apple
+							</option><option value="one">Two Apples
+							</option><option value="2">Three Apples
+							</option><option value="3">Four Apples
+							</option></select>
+						</li><br>
+
+						<li> Two apples plus two apples makes:<br>
+						
+							<input id="Q2a" type="radio">&nbsp;&nbsp;a. One apple.<br>
+							<input id="Q2b" type="radio">&nbsp;&nbsp;b. Two apples.<br>
+							<input id="Q2c" type="radio">&nbsp;&nbsp;c. Three apples.<br>
+							<input id="Q2d" type="radio">&nbsp;&nbsp;d. Four apples.<br>
+						
+						</li><br>
+
+      					<li> What is an apple?
+        					<input id="Q3" size="24" type="text">
+      					</li>
+    				<ul>
+					
+				
+    				<input type="submit" value="Check Answers">
+    			
+    				<input value="Reset Questions" onclick="location.reload(true)" type="reset">
+
+    			</ul></ul></fieldset>
+  				</form>
+				
+
+
+</body></html>

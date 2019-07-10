@@ -1,0 +1,108 @@
+create temporary table temp (select distinct Prescriptions.PSIN, Prescriptions.DSIN, Patients.Name, Patients.SIN, Patients.Physician, 
+Prescriptions.DTN from Prescriptions, Patients, Doctors where Doctors.Name = 'Jim Jones' and Patients.Physician = 'Jim Jones' and Prescriptions.PSIN=Patients.SIN)
+<?php
+	session_start();
+	include 'conn.php';
+
+	if(empty($_SESSION['username']) || empty($_SESSION['password']))
+		print("Access to database denied");
+	else {
+		$username = $_SESSION['username'];
+		$password = $_SESSION['password'];
+		$type = $_SESSION['type'];
+
+		if($type == "pharmaceutical") {
+			include '../includes/pheader.html';
+			print("<p>Insufficient privileges to delete books from catalogue.</p>");
+		}
+		if($type == "doctor") {
+			include '../includes/dheader.html';
+			print("<p>Insufficient privileges to delete books from catalogue.</p>");
+		}
+		if($type == "patient") {
+			include '../includes/uheader.html';
+			print("<p>Insufficient privileges to delete books from catalogue.</p>");
+		}
+		if($type == "pharmacy") {
+			include '../includes/aheader.html';
+			include '../includes/fillform.html';
+			
+			if(isset($_POST["fillPrescriptionButton"])){
+		$sql = "create table if not exists banana(ha int, primary key(ha))";
+				$mysqli -> query($sql);
+				$result = $mysqli -> query($sql);
+				if(!$results)
+					echo " ".mysqli_error($mysqli);
+					print("<p>Select query Good</p>");
+			}	
+			
+			if(isset($_POST["deleteTitleButton"])) {
+				$pfill = $_POST['pfill'];
+				$count = count($pfill);
+
+				
+				
+				for($i = 0; $i < $count; $i++) {	
+					$sql = $mysqli -> prepare("update Prescriptions, temp set Filled='Yes' where Filled=? and where temp.DTN = 'Avlin'");
+					$sql -> bind_param('s', $pfill[$i]);
+					$sql -> execute();
+					if($sql -> errno)
+						print("Delete query failed");
+				}
+				if($count == 1)
+					print("<p>$count book removed from library catalogue.</p>");
+				else
+					print("<p>$count books removed from library catalogue.</p>");
+			}
+			else {
+				
+				
+				if(isset($_POST["fillPrescriptionButton"])) {
+					
+				$Name = $_POST['Name'];
+				$DName = $_POST['DName'];
+				
+				
+					
+				$sql = $mysqli -> prepare("select distinct Prescriptions.Filled, Prescriptions.DTN, Prescriptions.Date, Patients.Physician, Patients.Name from Prescriptions, Patients, Doctors
+											where Prescriptions.Filled='No' and Patients.SIN=Prescriptions.PSIN and Patients.Name='". $Name ."' and Patients.Physician=Doctors.Name='". $DName ."'");
+				
+				$sql -> execute();
+				
+				$result = $sql -> get_result();
+				
+				if(!$result)
+					print("<p>Select query failed</p>");
+				
+				else {
+					if($result -> num_rows == 0)
+						print("<p>There are no books in catalogue</p>");
+					else {
+						print("<h1>Select book(s) to remove from catalogue</h1>");
+					}
+					?>
+
+						<form name="deleteBooks" method="post" action="<?php $PHP_SELF?>">
+
+					<?php
+							print("<table><tr><th>Fill</th><th>Patient Name</th><th>Drug Trade Name</th><th>Date Prescribed</th><th>Primary Physician</th></tr>\n");
+							while($row = $result -> fetch_object()) {
+								echo '<tr>';
+								$DTN = $row -> DTN;
+								print("<td><input type=\"checkbox\" name=\"pfill[]\" value=\"$DTN\"></td>");
+								echo '<td>'.$row -> Name.'</td>';
+								echo '<td>'.$row -> DTN.'</td>';
+								echo '<td>'.$row -> Date.'</td>';
+								echo '<td>'.$row -> Physician.'</td>';
+								echo '</tr>';
+								print("\n");
+							}
+							print("</table><br />\n<input type=\"submit\" value=\"Delete selected books\" name=\"deleteTitleButton\"></form>");
+					}
+				}
+			}
+		}
+    	include '../includes/footer.html';
+	}
+	$mysqli -> close();
+?>

@@ -1,0 +1,160 @@
+#page {
+	width: 800px;
+	margin: 20px auto;
+	border: solid 1px #aaa;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-box-shadow: 0 0 10px #aaa;
+	-webkit-box-shadow: 0 0 10px #aaa;
+	box-shadow: 0 0 10px #aaa;
+}
+			
+#nav ul {
+	width: 800px;
+	height: 36px;
+	padding: 0;
+	margin: 0;
+	background: #1b8cdc;
+	list-style-type: none;
+	display: block;
+}
+
+#nav li {
+	float: left;
+	padding: 10px 0px;
+	margin: 0;
+}
+
+#nav li a {
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+	font-family: "proxima-nova", sans-serif;
+	padding: 10px 15px 8px 15px;
+}
+
+#nav li a:hover {
+	background: #1577bc;
+}
+
+#nav li a:active {
+	background: #1d7fc4;
+}
+
+#content {
+	width: 770px;
+	padding: 15px;
+	margin: auto;
+	overflow:hidden;
+	height:auto
+}
+
+h1 {
+	color: #1b8cdc;
+	font-weight: 200;
+	margin-bottom: 10px;
+	font-family: "proxima-nova", sans-serif;
+	text-align: center;
+}	
+
+h2 {
+	color: #1b8cdc;
+	font-weight: 100;
+	margin-bottom: 8px;
+	font-family: "proxima-nova", sans-serif;
+	text-align: center;
+}
+
+p {
+	color: #888;
+	font-weight: 200;
+	margin-bottom: 10px;
+	font-family: "proxima-nova", sans-serif;
+	text-align: center;
+}	
+		
+form {
+	padding-top: 15px;
+	display: block;
+	text-align: center;
+}
+
+input[type="text"], input[type="password"] { 
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    font-size: 16px;
+}
+
+input[type="submit"] {     
+    padding:0.5em 0.6em; 
+	color:white;
+	background-color: #1b8cdc;
+	text-align: center;
+	font-size: 16px;
+	border: 0px;
+	border-radius: 6px;
+}
+
+input[type="submit"]:hover {
+	background: #1577bc;
+}
+
+input[type="submit"]:active {
+	background: #1d7fc4;
+}
+
+input[type="radio"] {
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	margin: 0 5px;
+	padding: 2px;
+}
+
+input[type="radio"]:checked{
+	background-color: #ededed;
+	border: 1px solid #ccc;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="date"] { 
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    font-size: 16px;
+}
+
+label {
+   text-size: 18px;
+   font-family: "proxima-nova", sans-serif;
+   color: #888;
+}
+
+table {
+	font-family: "proxima-nova", sans-serif;
+	font-size: 16px;
+	width:80%;	
+	margin-left: 10%;
+	margin-right: 10%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th {
+	background: #e0e0e0;
+	color: #666;
+	padding: 8px;
+	text-align: left;
+	border: 1px solid #a0a0a0;
+	font-weight: normal;
+}
+
+td {	
+	color: #888;
+	padding: 8px;
+	text-align: left;	
+	border: 1px solid #a0a0a0;
+}

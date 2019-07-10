@@ -1,0 +1,18 @@
+
+    <h1>Please Type In Social Insurance Number</h1>
+
+    <form name="search" method="post" action="<?php $PHP_SELF?>">
+ 
+		<input type="text" placeholder="Keyword" name="keyword">
+        <input type="submit" value="Search" name="searchButton"><br/><br />
+ 	
+        <input type="radio" name="choice" value="SIN" checked>
+		<label for="SIN">Select For Your Info</label>	
+
+        <input type="radio" name="choice" value="PSIN">
+		<label for="PSIN">Select For Primary Physician</label>
+	
+        <input type="radio" name="choice" value="Pres">
+		<label for="Pres">Select For Prescriptions</label>  
+
+  </form>
