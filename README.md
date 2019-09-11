@@ -11,7 +11,7 @@ Heavy use of php and minor use of html.
 
 CP 3620
 --------------
-A small site using mostly JS and some php. No SQL file included but will add later.
+A small site using mostly JS and some php. No SQL file included.
 --------------
 
 FinalProject
